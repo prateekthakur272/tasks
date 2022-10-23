@@ -13,6 +13,5 @@
         <item name="android:statusBarColor">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
         <item name="android:textColor">@color/black</item>
-        <item name="android:buttonTint">@color/blizzard_blue</item>
     </style>
 </resources>
