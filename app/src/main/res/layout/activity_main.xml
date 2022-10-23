@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
+        <ImageView
+            android:id="@+id/intro_images"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:src="@drawable/cat"
+            android:contentDescription="@string/app_logo"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
