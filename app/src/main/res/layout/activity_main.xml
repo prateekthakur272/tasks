@@ -23,6 +23,14 @@
             android:src="@drawable/cat"
             android:contentDescription="@string/app_logo"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Tasks"
+            android:textStyle="bold"
+            android:textSize="36sp"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
