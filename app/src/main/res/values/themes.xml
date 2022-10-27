@@ -6,7 +6,7 @@
         <item name="colorPrimaryVariant">@color/blizzard_blue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/nyanza</item>
+        <item name="colorSecondary">@color/bisque</item>
         <item name="colorSecondaryVariant">@color/salmon_pink</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->

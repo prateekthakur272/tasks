@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
     <ImageButton
+        android:id="@+id/add_task_button"
         android:layout_width="72dp"
         android:layout_height="72dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,9 +1,11 @@
 package com.prateekthakur272.tasks
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +20,11 @@ class MainActivity : AppCompatActivity() {
             arrayOf("Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task")
         )
         taskRecyclerView.adapter = tasksArrayAdapter
+
+        val addTaskButton:ImageButton = findViewById(R.id.add_task_button)
+        addTaskButton.setOnClickListener {
+            startActivity(Intent(this,AddTask::class.java))
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu,menu)

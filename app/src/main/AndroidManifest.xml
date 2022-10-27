@@ -20,7 +20,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Task"
+            android:name=".TaskActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -53,5 +53,4 @@
                 android:value="" />
         </activity>
     </application>
-
 </manifest>
