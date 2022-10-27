@@ -6,31 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ListView
+        android:id="@+id/task_list_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="match_parent"/>
+    <ImageButton
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <ImageView
-            android:id="@+id/intro_images"
-            android:layout_width="240dp"
-            android:layout_height="240dp"
-            android:src="@drawable/cat"
-            android:contentDescription="@string/app_logo"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Tasks"
-            android:textStyle="bold"
-            android:textSize="36sp"/>
-
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/add_button_drawable"
+        android:src="@drawable/ic_add"
+        android:contentDescription="@string/add_task" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

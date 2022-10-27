@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Tasks</string>
     <string name="app_logo">App Logo</string>
+    <string name="tasks">Tasks</string>
+    <string name="mark_all_tasks_as_done">Mark all tasks as done</string>
+    <string name="delete_all_tasks">Delete all tasks</string>
+    <string name="add_task">Add task</string>
 </resources>

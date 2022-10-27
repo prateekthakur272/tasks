@@ -1,25 +1,40 @@
 package com.prateekthakur272.tasks
 
 import android.os.Bundle
-import android.os.Handler
-import android.widget.ImageView
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportActionBar?.hide()
-        val introImages:ImageView = findViewById(R.id.intro_images)
-        val imageArray:Array<Int> = arrayOf(R.drawable.cat,R.drawable.crocodile,R.drawable.elephant,R.drawable.monkey,R.drawable.sea_horse)
-        var image = 0
-        val handler = Handler()
-        Thread {
-            while (true) {
-                introImages.setImageResource(imageArray[image++ % imageArray.size])
-                Thread.sleep(500)
+
+        val taskRecyclerView:ListView = findViewById(R.id.task_list_recycler_view)
+        val tasksArrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,
+            arrayOf("Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task")
+        )
+        taskRecyclerView.adapter = tasksArrayAdapter
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.mark_all_tasks_done -> {
+                Toast.makeText(this,"Marked all as done",Toast.LENGTH_SHORT).show()
+                return true
             }
-        }.start()
-        handler.postDelayed({finish()},4000)
+            R.id.delete_all_tasks -> {
+                Toast.makeText(this,"Deleted all tasks",Toast.LENGTH_SHORT).show()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
