@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
 import android.widget.LinearLayout
+import android.widget.Toast
 import java.util.*
 
 class AddTask : AppCompatActivity(){
@@ -22,7 +23,9 @@ class AddTask : AppCompatActivity(){
 
         datePickerDialog = DatePickerDialog(this)
         timePickerDialog = TimePickerDialog(this,
-            { _, h, m ->  },calendar.get(Calendar.HOUR),calendar.get(Calendar.MINUTE),false)
+            { _, h, m ->
+                Toast.makeText(this,"Time",Toast.LENGTH_SHORT).show()
+            },calendar.get(Calendar.HOUR),calendar.get(Calendar.MINUTE),false)
 
         addDateTime.setOnCheckedChangeListener { _, b ->
             if (b){
