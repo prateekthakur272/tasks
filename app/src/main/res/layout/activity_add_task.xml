@@ -60,7 +60,7 @@
             android:hint="@string/description_placeholder"
             android:inputType="textMultiLine"
             android:lines="5"
-            android:padding="10dp" />
+            android:padding="10dp"/>
     </LinearLayout>
 
     <CheckBox
@@ -72,27 +72,31 @@
 
     <LinearLayout
         android:id="@+id/date_time_layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:orientation="horizontal"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:layout_gravity="center">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="50"
             android:gravity="center"
             android:text="@string/date_placeholder"
-            android:textSize="18sp" />
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_calendar"
+            android:drawablePadding="5dp"/>
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="50"
             android:gravity="center"
             android:text="@string/time_placeholder"
-            android:textSize="18sp" />
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_clock"
+            android:drawablePadding="5dp"/>
 
     </LinearLayout>
 

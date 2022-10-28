@@ -10,7 +10,7 @@
     <string name="title_placeholder">Clean your room</string>
     <string name="description_placeholder">Place your books on the bookshelf</string>
     <string name="set_date_and_time">Set date and time</string>
-    <string name="date_placeholder">Date</string>
-    <string name="time_placeholder">Time</string>
+    <string name="date_placeholder">DD/MM/YYYY</string>
+    <string name="time_placeholder">HH:MM</string>
     <string name="image">Image</string>
 </resources>

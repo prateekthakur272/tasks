@@ -17,8 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         val taskRecyclerView:ListView = findViewById(R.id.task_list_recycler_view)
         val tasksArrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,
-            arrayOf("Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task","Task")
-        )
+            arrayOf("Task"))
         taskRecyclerView.adapter = tasksArrayAdapter
 
         val addTaskButton:ImageButton = findViewById(R.id.add_task_button)
