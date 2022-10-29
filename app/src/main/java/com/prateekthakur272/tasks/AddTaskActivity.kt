@@ -18,6 +18,7 @@ class AddTaskActivity : AppCompatActivity(){
         setContentView(R.layout.activity_add_task)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Add task"
 
         val titleInputView:EditText = findViewById(R.id.title_input)
         val descriptionInput:EditText = findViewById(R.id.description_input)

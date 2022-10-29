@@ -64,6 +64,9 @@ class MainActivity : AppCompatActivity() {
                 deleteAllTasksDialog.show()
                 return true
             }
+            R.id.about -> {
+                startActivity(Intent(this,AboutActivity::class.java))
+            }
         }
         return super.onOptionsItemSelected(item)
     }
