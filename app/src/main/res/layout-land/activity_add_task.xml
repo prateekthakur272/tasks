@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:paddingHorizontal="52dp"
-    tools:context=".AddTask">
+    tools:context=".AddTaskActivity">
 
     <ImageView
         android:id="@+id/image"

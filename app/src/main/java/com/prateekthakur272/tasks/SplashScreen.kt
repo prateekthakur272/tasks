@@ -16,17 +16,17 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
         supportActionBar?.hide()
         val introImages: ImageView = findViewById(R.id.intro_images)
-        val imageArray:Array<Int> = arrayOf(R.drawable.cat,R.drawable.crocodile,R.drawable.elephant,R.drawable.monkey,R.drawable.sea_horse)
+        val imageArray:Array<Int> = arrayOf(R.drawable.cat,R.drawable.crocodile,R.drawable.elephant,R.drawable.monkey,R.drawable.sea_horse,R.drawable.octopus,R.drawable.puppy,R.drawable.turtle,R.drawable.kuala)
         var image = 0
         val handler = Handler()
         Thread {
             while (true) {
                 introImages.setImageResource(imageArray[image++ % imageArray.size])
-                SystemClock.sleep(500)
+                SystemClock.sleep(250)
             }
         }.start()
         handler.postDelayed({
             startActivity(Intent(this,MainActivity::class.java))
-            finish()},2500)
+            finish()},2400)
     }
 }

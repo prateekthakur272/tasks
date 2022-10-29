@@ -1,17 +1,15 @@
 package com.prateekthakur272.tasks
 
-import android.app.Application
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.CalendarContract.CalendarAlerts
 import android.view.View
 import android.widget.*
 import java.util.*
 
-class AddTask : AppCompatActivity(){
+class AddTaskActivity : AppCompatActivity(){
     private val calendar: Calendar = Calendar.getInstance()
     private lateinit var datePickerDialog:DatePickerDialog
     private lateinit var timePickerDialog: TimePickerDialog

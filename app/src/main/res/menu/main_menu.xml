@@ -11,4 +11,12 @@
         android:id="@+id/delete_all_tasks"
         android:title="@string/delete_all_tasks"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/history"
+        android:title="@string/history"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/about"
+        android:title="@string/about"
+        app:showAsAction="never"/>
 </menu>

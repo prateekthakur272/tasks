@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         val addTaskButton:ImageButton = findViewById(R.id.add_task_button)
         addTaskButton.setOnClickListener {
-            startActivity(Intent(this,AddTask::class.java))
+            startActivity(Intent(this,AddTaskActivity::class.java))
         }
 
     }
@@ -50,7 +50,18 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
             R.id.delete_all_tasks -> {
-                Toast.makeText(this,"Deleted all tasks",Toast.LENGTH_SHORT).show()
+                val deleteAllTasksDialog = Dialog(this)
+                deleteAllTasksDialog.setContentView(R.layout.delete_all_tasks_dialog_layout)
+                val yesButton:Button = deleteAllTasksDialog.findViewById(R.id.yes_button)
+                val noButton:Button = deleteAllTasksDialog.findViewById(R.id.no_button)
+                yesButton.setOnClickListener {
+                    Toast.makeText(this,"Deleted all tasks",Toast.LENGTH_SHORT).show()
+                    deleteAllTasksDialog.dismiss()
+                }
+                noButton.setOnClickListener {
+                    deleteAllTasksDialog.dismiss()
+                }
+                deleteAllTasksDialog.show()
                 return true
             }
         }

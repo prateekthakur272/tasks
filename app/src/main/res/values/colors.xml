@@ -2,9 +2,9 @@
 <resources>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
-    <color name="nyanza">#D6F6DD</color>
-    <color name="lavender_blue">#DAC4F7</color>
+    <color name="nyanza">#AADCB5</color>
+    <color name="lavender_blue">#C9B4E3</color>
     <color name="salmon_pink">#F4989C</color>
-    <color name="bisque">#EBD2B4</color>
-    <color name="blizzard_blue">#ACECF7</color>
+    <color name="bisque">#DDC19E</color>
+    <color name="blizzard_blue">#A0DAE4</color>
 </resources>
