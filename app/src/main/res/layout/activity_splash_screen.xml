@@ -6,33 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".SplashScreen">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
+    <ImageView
+        android:id="@+id/intro_images"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:contentDescription="@string/app_logo"
+        android:src="@drawable/cat"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        tools:ignore="UseCompoundDrawables">
-
-        <ImageView
-            android:id="@+id/intro_images"
-            android:layout_width="240dp"
-            android:layout_height="240dp"
-            android:src="@drawable/cat"
-            android:contentDescription="@string/app_logo"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="@string/tasks"
-            android:textStyle="bold"
-            android:textSize="36sp"/>
-
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
