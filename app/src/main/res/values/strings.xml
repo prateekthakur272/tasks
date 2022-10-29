@@ -13,4 +13,9 @@
     <string name="date_placeholder">DD/MM/YYYY</string>
     <string name="time_placeholder">HH:MM</string>
     <string name="image">Image</string>
+    <string name="task_added">Task added!</string>
+    <string name="done">Done</string>
+    <string name="clear_all">Done with all your stuffs?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
 </resources>
