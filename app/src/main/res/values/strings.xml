@@ -21,4 +21,8 @@
     <string name="delete_all">Do you want to delete all the tasks?</string>
     <string name="history">History</string>
     <string name="about">About</string>
+    <string name="github">Github</string>
+    <string name="developer_intro">Developed and maintained by</string>
+    <string name="prateek_thakur">Prateek Thakur</string>
+    <string name="version">version 1.0</string>
 </resources>

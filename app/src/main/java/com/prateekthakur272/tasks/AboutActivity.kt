@@ -1,7 +1,10 @@
 package com.prateekthakur272.tasks
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 
 class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,10 +13,17 @@ class AboutActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "About"
 
+        val githubButton:Button = findViewById(R.id.github_button)
 
-
+        githubButton.setOnClickListener {
+            openUrl("https://github.com/prateekthakur272/")
+        }
     }
-
+    private fun openUrl(url:String):Unit{
+        val uriUrl: Uri = Uri.parse(url)
+        val launchBrowser = Intent(Intent.ACTION_VIEW, uriUrl)
+        startActivity(launchBrowser)
+    }
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return true
