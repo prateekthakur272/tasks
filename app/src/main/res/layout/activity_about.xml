@@ -3,18 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AboutActivity">
+    android:layout_height="wrap_content"
+    tools:context=".AboutActivity"
+    android:paddingHorizontal="32dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_margin="32dp">
+        android:gravity="center">
 
         <ImageView
+            android:layout_marginTop="32dp"
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:src="@drawable/developer_avtar"
@@ -34,12 +35,19 @@
             android:textSize="28sp"
             android:textStyle="bold"/>
 
-
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/github_button"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:maxWidth="400dp"
+            android:text="@string/connect_with_me"
+            android:background="@drawable/button_background"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
             android:text="@string/version"
             android:textSize="18sp"/>
 
