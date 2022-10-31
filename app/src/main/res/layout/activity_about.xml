@@ -35,13 +35,29 @@
             android:textSize="28sp"
             android:textStyle="bold"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/about_me"
+            android:textSize="18sp"
+            android:gravity="center"/>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/github_button"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="18dp"
             android:maxWidth="400dp"
             android:text="@string/connect_with_me"
+            android:background="@drawable/button_background"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="18dp"
+            android:maxWidth="400dp"
+            android:text="@string/explore_more_apps"
             android:background="@drawable/button_background"/>
 
         <TextView

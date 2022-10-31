@@ -16,7 +16,7 @@ class AboutActivity : AppCompatActivity() {
         val githubButton:Button = findViewById(R.id.github_button)
 
         githubButton.setOnClickListener {
-            openUrl("https://github.com/prateekthakur272/")
+            openUrl("https://prateekthakur272.github.io")
         }
     }
     private fun openUrl(url:String):Unit{
