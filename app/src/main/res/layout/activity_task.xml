@@ -18,7 +18,7 @@
         android:text = "Title"
         android:textStyle="bold"
         android:textSize="24sp"
-        android:focusable="false"/>
+        android:enabled="false"/>
 
     <EditText
         android:id="@+id/description_input"
@@ -29,6 +29,6 @@
         android:background="@drawable/edit_text_background"
         android:text = "Description"
         android:textSize="18sp"
-        android:focusable="false"/>
+        android:enabled="false"/>
 
 </LinearLayout>
