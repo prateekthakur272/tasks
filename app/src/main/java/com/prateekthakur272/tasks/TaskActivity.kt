@@ -1,8 +1,6 @@
 package com.prateekthakur272.tasks
 
-import android.inputmethodservice.KeyboardView
 import android.os.Bundle
-import android.text.InputType
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
@@ -18,14 +16,18 @@ class TaskActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task)
+        supportActionBar?.title = "Task"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         titleText = findViewById(R.id.title_input)
         descriptionText = findViewById(R.id.description_input)
 
 
     }
+
     private lateinit var edit:MenuItem
     private lateinit var done:MenuItem
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.task_menu, menu)
         edit = menu!!.findItem(R.id.edit)
@@ -55,5 +57,10 @@ class TaskActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

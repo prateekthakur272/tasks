@@ -6,7 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".TaskActivity"
     android:paddingHorizontal="32dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/monkey"
+        android:contentDescription="@string/image"/>
 
     <EditText
         android:id="@+id/title_input"
@@ -15,10 +23,13 @@
         android:layout_marginTop="24dp"
         android:padding="12dp"
         android:background="@drawable/edit_text_background"
-        android:text = "Title"
+        android:text = "@string/title"
         android:textStyle="bold"
+        android:inputType="text"
+        android:lines="1"
         android:textSize="24sp"
-        android:enabled="false"/>
+        android:enabled="false"
+        tools:ignore="Autofill,LabelFor" />
 
     <EditText
         android:id="@+id/description_input"
@@ -27,8 +38,11 @@
         android:layout_marginTop="24dp"
         android:padding="12dp"
         android:background="@drawable/edit_text_background"
-        android:text = "Description"
+        android:text = "@string/description"
         android:textSize="18sp"
-        android:enabled="false"/>
+        android:enabled="false"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        tools:ignore="Autofill,LabelFor"/>
 
 </LinearLayout>
