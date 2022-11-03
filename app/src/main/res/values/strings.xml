@@ -29,4 +29,6 @@
     <string name="about_me">Hello, I am a developer from khandwa, India</string>
     <string name="explore_more_apps">Explore more apps</string>
     <string name="edit">Edit</string>
+    <string name="mark_as_done">Mark as done</string>
+    <string name="delete">Delete</string>
 </resources>

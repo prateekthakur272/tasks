@@ -5,22 +5,34 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var parentView:View
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val taskRecyclerView:ListView = findViewById(R.id.task_list_recycler_view)
+        parentView = findViewById(R.id.linear_layout_main)
+
         val tasksArrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,
-            arrayOf("Task"))
+            arrayOf("Task","Task","Task"))
         taskRecyclerView.adapter = tasksArrayAdapter
+
+        taskRecyclerView.setOnItemClickListener { adapterView, view, i, l ->
+            Toast.makeText(this,"$i selected",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this,TaskActivity::class.java))
+        }
 
         val addTaskButton:ImageButton = findViewById(R.id.add_task_button)
         addTaskButton.setOnClickListener {
@@ -40,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 val yesButton:Button = clearAllTasksDialog.findViewById(R.id.yes_button)
                 val noButton:Button = clearAllTasksDialog.findViewById(R.id.no_button)
                 yesButton.setOnClickListener {
-                    Toast.makeText(this,"Marked all as done",Toast.LENGTH_SHORT).show()
+                    Snackbar.make(parentView,"Marked all as done",Snackbar.LENGTH_SHORT).show()
                     clearAllTasksDialog.dismiss()
                 }
                 noButton.setOnClickListener {
@@ -55,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 val yesButton:Button = deleteAllTasksDialog.findViewById(R.id.yes_button)
                 val noButton:Button = deleteAllTasksDialog.findViewById(R.id.no_button)
                 yesButton.setOnClickListener {
-                    Toast.makeText(this,"Deleted all tasks",Toast.LENGTH_SHORT).show()
+                    Snackbar.make(parentView,"Deleted all tasks",Snackbar.LENGTH_SHORT).show()
                     deleteAllTasksDialog.dismiss()
                 }
                 noButton.setOnClickListener {
