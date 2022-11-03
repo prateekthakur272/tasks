@@ -63,13 +63,12 @@ class AddTaskActivity : AppCompatActivity(){
             timePickerDialog.show()
         }
         addTaskButton.setOnClickListener {
-            if (titleInputView.text.isNotEmpty()){
+            if (titleInputView.text.isNotBlank()){
                 taskAddedDialog.show()
             }else{
                 Toast.makeText(this,"Title field can not be empty!",Toast.LENGTH_LONG).show()
             }
         }
-
     }
     override fun onSupportNavigateUp(): Boolean {
         finish()

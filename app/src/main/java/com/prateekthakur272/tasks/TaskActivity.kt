@@ -3,6 +3,8 @@ package com.prateekthakur272.tasks
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +14,8 @@ class TaskActivity : AppCompatActivity() {
 
     private lateinit var titleText:EditText
     private lateinit var descriptionText:EditText
+    private lateinit var markAsDoneButton: Button
+    private lateinit var deleteButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +25,8 @@ class TaskActivity : AppCompatActivity() {
 
         titleText = findViewById(R.id.title_input)
         descriptionText = findViewById(R.id.description_input)
-
+        markAsDoneButton = findViewById(R.id.mark_done_button)
+        deleteButton = findViewById(R.id.delete_task_button)
 
     }
 
@@ -38,16 +43,18 @@ class TaskActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.edit -> {
-                edit.isVisible = false
-                done.isVisible = true
                 titleText.isEnabled = true
                 descriptionText.isEnabled = true
+                markAsDoneButton.visibility = View.GONE
+                edit.isVisible = false
+                done.isVisible = true
                 Snackbar.make(titleText,"Edit your task",Snackbar.LENGTH_LONG).show()
             }
             R.id.done -> {
                 if (titleText.text.isNotBlank()) {
                     titleText.isEnabled = false
                     descriptionText.isEnabled = false
+                    markAsDoneButton.visibility = View.VISIBLE
                     edit.isVisible = true
                     done.isVisible = false
                     Snackbar.make(titleText,"Changes Saved",Snackbar.LENGTH_LONG).show()

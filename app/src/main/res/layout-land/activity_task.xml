@@ -45,21 +45,21 @@
         android:layout_marginTop="24dp">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/mark_done_button"
-            android:layout_width="0dp"
-            android:layout_height="52dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_background"
-            android:text="@string/mark_as_done"/>
-
-        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/delete_task_button"
             android:layout_width="0dp"
             android:layout_height="52dp"
             android:layout_weight="1"
-            android:layout_marginStart="24dp"
             android:background="@drawable/button_secondary_background"
             android:text="@string/delete"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mark_done_button"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/button_background"
+            android:text="@string/mark_as_done"/>
 
     </LinearLayout>
 
