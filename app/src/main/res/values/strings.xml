@@ -31,4 +31,5 @@
     <string name="edit">Edit</string>
     <string name="mark_as_done">Mark as done</string>
     <string name="delete">Delete</string>
+    <string name="sign_in_with_google">Sign in with google</string>
 </resources>

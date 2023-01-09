@@ -7,20 +7,24 @@
     tools:context=".MainActivity"
     android:id="@+id/linear_layout_main">
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/task_list_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    <ImageButton
-        android:id="@+id/add_task_button"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/add_button_drawable"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_task_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/ic_add"
-        android:contentDescription="@string/add_task" />
+        android:backgroundTint="@color/lime"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

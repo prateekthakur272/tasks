@@ -6,12 +6,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.ListView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -22,21 +21,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val taskRecyclerView:ListView = findViewById(R.id.task_list_recycler_view)
+        val taskRecyclerView:RecyclerView = findViewById(R.id.task_list_recycler_view)
         parentView = findViewById(R.id.linear_layout_main)
-
-        val tasksArrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,
-            arrayOf("Task","Task","Task"))
-        taskRecyclerView.adapter = tasksArrayAdapter
-
-        taskRecyclerView.setOnItemClickListener { adapterView, view, i, l ->
-            Toast.makeText(this,"$i selected",Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this,TaskActivity::class.java))
-        }
+        val adapter:TaskRecyclerViewAdapter = TaskRecyclerViewAdapter(this, arrayListOf(
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+            Task("Task","Description"),
+        ))
+        taskRecyclerView.adapter = adapter
+        taskRecyclerView.layoutManager = LinearLayoutManager(this)
 
         val addTaskButton:ImageButton = findViewById(R.id.add_task_button)
         addTaskButton.setOnClickListener {
-            startActivity(Intent(this,AddTaskActivity::class.java))
+            startActivity(Intent(this,LoginActivity::class.java))
         }
 
     }
