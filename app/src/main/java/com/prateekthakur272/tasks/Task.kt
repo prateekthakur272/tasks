@@ -1,16 +1,4 @@
 package com.prateekthakur272.tasks
-
-enum class Status{
-    PENDING,
-    FINISHED;
-
-    override fun toString(): String {
-        return when(this){
-            Status.PENDING -> "Pending"
-            Status.FINISHED -> "Finished"
-        }
-    }
-}
 class Task {
     var title:String
     var description: String? = null
@@ -34,5 +22,17 @@ class Task {
     }
     fun markAsPending(){
         this.status = Status.PENDING
+    }
+
+    enum class Status{
+        PENDING,
+        FINISHED;
+
+        override fun toString(): String {
+            return when(this){
+                Status.PENDING -> "Pending"
+                Status.FINISHED -> "Finished"
+            }
+        }
     }
 }
