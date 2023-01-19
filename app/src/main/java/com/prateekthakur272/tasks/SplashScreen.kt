@@ -22,11 +22,11 @@ class SplashScreen : AppCompatActivity() {
         Thread {
             while (true) {
                 introImages.setImageResource(imageArray[image++ % imageArray.size])
-                SystemClock.sleep(250)
+                SystemClock.sleep(180)
             }
         }.start()
         handler.postDelayed({
             startActivity(Intent(this,MainActivity::class.java))
-            finish()},2400)
+            finish()},2000)
     }
 }

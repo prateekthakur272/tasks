@@ -33,4 +33,34 @@ class TaskDatabaseHelper(context:Context) : SQLiteOpenHelper(context, DB_NAME,nu
         cv.put(COLUMN_DESC,task.description)
         db.insert(TABLE_NAME,null,cv)
     }
+
+    fun getTasksArrayList(): ArrayList<Task> {
+        val taskList = mutableListOf<Task>()
+        val query = "select * from $TABLE_NAME"
+        val db = this.readableDatabase
+        try {
+            val cursor = db.rawQuery(query,null)
+            if (cursor.moveToFirst()){
+                do {
+                    taskList.add(Task(cursor.getString(1),cursor.getString(2)))
+                    Log.d("database", cursor.getString(1))
+                }while (cursor.moveToNext())
+            }
+        }catch (e:java.lang.RuntimeException){
+            Log.d("database","$TABLE_NAME table not found")
+        }
+        db.close()
+        return taskList as ArrayList
+    }
+    fun deleteALLTasks(){
+        val query = "delete from $TABLE_NAME"
+        val db = this.writableDatabase
+        try {
+            db.execSQL(query)
+            Log.d("database","deleted all tasks")
+        }catch (e:java.lang.RuntimeException){
+            Log.d("database","$TABLE_NAME table not found")
+        }
+        db.close()
+    }
 }

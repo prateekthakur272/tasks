@@ -11,10 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
 
 @SuppressLint("NotifyDataSetChanged")
-class TaskRecyclerViewAdapter(val context: Context, val items:ArrayList<Task>) :RecyclerView.Adapter<TaskRecyclerViewAdapter.ViewHolder>(){
-    init {
-        notifyDataSetChanged()
-    }
+class TaskRecyclerViewAdapter(val context: Context, var items:ArrayList<Task>) :RecyclerView.Adapter<TaskRecyclerViewAdapter.ViewHolder>(){
     public class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
         val titleTextView:TextView = itemView.findViewById(R.id.title_text)
         val descriptionTextView:TextView = itemView.findViewById(R.id.description_text)

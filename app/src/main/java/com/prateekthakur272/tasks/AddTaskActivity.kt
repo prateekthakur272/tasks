@@ -3,6 +3,7 @@ package com.prateekthakur272.tasks
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,10 +23,10 @@ class AddTaskActivity : AppCompatActivity(){
 
         val titleInputView:EditText = findViewById(R.id.title_input)
         val descriptionInput:EditText = findViewById(R.id.description_input)
-        val addDateTime:CheckBox =findViewById(R.id.add_date_time)
-        val dateTimeLayout:LinearLayout = findViewById(R.id.date_time_layout)
-        val dateView:TextView = findViewById(R.id.date)
-        val timeView:TextView = findViewById(R.id.time)
+//        val addDateTime:CheckBox =findViewById(R.id.add_date_time)
+//        val dateTimeLayout:LinearLayout = findViewById(R.id.date_time_layout)
+//        val dateView:TextView = findViewById(R.id.date)
+//        val timeView:TextView = findViewById(R.id.time)
         val addTaskButton: Button = findViewById(R.id.add_task_button)
 
         val taskAddedDialog = Dialog(this)
@@ -36,39 +37,38 @@ class AddTaskActivity : AppCompatActivity(){
             taskAddedDialog.dismiss()
             finish()
         }
-
-        datePickerDialog = DatePickerDialog(this)
-        timePickerDialog = TimePickerDialog(this,
-            { _, hour, minute ->
-                "$hour:$minute".also{ timeView.text = it}
-            },calendar.get(Calendar.HOUR),calendar.get(Calendar.MINUTE),false)
-
-        addDateTime.setOnCheckedChangeListener { _, b ->
-            if (b){
-                datePickerDialog.show()
-                dateTimeLayout.visibility = View.VISIBLE
-            }
-            else
-                dateTimeLayout.visibility = View.GONE
-        }
-        datePickerDialog.setOnDateSetListener { _, year, month, day ->
-            "$year/$month/$day".also { dateView.text = it }
-            println(Calendar.HOUR)
-            timePickerDialog.show()
-        }
-        dateView.setOnClickListener {
-            datePickerDialog.show()
-        }
-        timeView.setOnClickListener {
-            timePickerDialog.show()
-        }
+//        datePickerDialog = DatePickerDialog(this)
+//        timePickerDialog = TimePickerDialog(this,
+//            { _, hour, minute ->
+//                "$hour:$minute".also{ timeView.text = it}
+//            },calendar.get(Calendar.HOUR),calendar.get(Calendar.MINUTE),false)
+//
+//        addDateTime.setOnCheckedChangeListener { _, b ->
+//            if (b){
+//                datePickerDialog.show()
+//                dateTimeLayout.visibility = View.VISIBLE
+//            }
+//            else
+//                dateTimeLayout.visibility = View.GONE
+//        }
+//        datePickerDialog.setOnDateSetListener { _, year, month, day ->
+//            "$year/$month/$day".also { dateView.text = it }
+//            println(Calendar.HOUR)
+//            timePickerDialog.show()
+//        }
+//        dateView.setOnClickListener {
+//            datePickerDialog.show()
+//        }
+//        timeView.setOnClickListener {
+//            timePickerDialog.show()
+//        }
         addTaskButton.setOnClickListener {
             if (titleInputView.text.isNotBlank()){
                 val taskDatabaseHelper = TaskDatabaseHelper(this)
-                taskDatabaseHelper.addTask(Task("Title","Desc"))
+                taskDatabaseHelper.addTask(Task(titleInputView.text.toString(),descriptionInput.text.toString()))
                 taskAddedDialog.show()
             }else{
-                Toast.makeText(this,"Title field can not be empty!",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Title field can not be empty!",Toast.LENGTH_SHORT).show()
             }
         }
     }

@@ -16,33 +16,19 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private lateinit var parentView:View
+    private lateinit var taskDatabaseHelper:TaskDatabaseHelper
+    private lateinit var adapter: TaskRecyclerViewAdapter
+    private lateinit var taskRecyclerView:RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val taskRecyclerView:RecyclerView = findViewById(R.id.task_list_recycler_view)
+         taskDatabaseHelper = TaskDatabaseHelper(this)
+
+        taskRecyclerView = findViewById(R.id.task_list_recycler_view)
         parentView = findViewById(R.id.linear_layout_main)
-        val adapter:TaskRecyclerViewAdapter = TaskRecyclerViewAdapter(this, arrayListOf(
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-            Task("Task","Description"),
-        ))
+        adapter = TaskRecyclerViewAdapter(this,taskDatabaseHelper.getTasksArrayList())
         taskRecyclerView.adapter = adapter
         taskRecyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -79,8 +65,11 @@ class MainActivity : AppCompatActivity() {
                 val yesButton:Button = deleteAllTasksDialog.findViewById(R.id.yes_button)
                 val noButton:Button = deleteAllTasksDialog.findViewById(R.id.no_button)
                 yesButton.setOnClickListener {
+                    taskDatabaseHelper.deleteALLTasks()
                     Snackbar.make(parentView,"Deleted all tasks",Snackbar.LENGTH_SHORT).show()
                     deleteAllTasksDialog.dismiss()
+                    adapter.items = taskDatabaseHelper.getTasksArrayList()
+                    taskRecyclerView.adapter = adapter
                 }
                 noButton.setOnClickListener {
                     deleteAllTasksDialog.dismiss()
@@ -93,5 +82,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        adapter.items = taskDatabaseHelper.getTasksArrayList()
+        taskRecyclerView.adapter = adapter
     }
 }
