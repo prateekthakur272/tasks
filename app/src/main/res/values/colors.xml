@@ -9,4 +9,6 @@
     <color name="blizzard_blue">#A0DAE4</color>
     <color name="lavender_blue_light">#E6D7FA</color>
     <color name="lime">#FFDF7E</color>
+    <color name="card_background_light">#D5F0F8</color>
+    <color name="card_background_dark">#404040</color>
 </resources>

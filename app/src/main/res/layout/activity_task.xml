@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,7 +27,6 @@
         android:inputType="text"
         android:lines="1"
         android:textSize="24sp"
-        android:enabled="false"
         tools:ignore="Autofill,LabelFor" />
 
     <EditText
@@ -40,7 +38,6 @@
         android:background="@drawable/edit_text_background"
         android:text = "@string/description"
         android:textSize="18sp"
-        android:enabled="false"
         android:inputType="textMultiLine"
         tools:ignore="Autofill,LabelFor"/>
 

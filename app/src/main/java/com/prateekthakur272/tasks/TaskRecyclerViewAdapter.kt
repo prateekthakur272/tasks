@@ -12,7 +12,7 @@ import com.google.android.material.card.MaterialCardView
 
 @SuppressLint("NotifyDataSetChanged")
 class TaskRecyclerViewAdapter(val context: Context, var items:ArrayList<Task>) :RecyclerView.Adapter<TaskRecyclerViewAdapter.ViewHolder>(){
-    public class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
         val titleTextView:TextView = itemView.findViewById(R.id.title_text)
         val descriptionTextView:TextView = itemView.findViewById(R.id.description_text)
         val parentLayout:MaterialCardView = itemView.findViewById(R.id.parent_layout)
@@ -28,9 +28,15 @@ class TaskRecyclerViewAdapter(val context: Context, var items:ArrayList<Task>) :
         holder.descriptionTextView.text = items[position].description
 
         holder.parentLayout.setOnClickListener {
-            context.startActivity(Intent(context,TaskActivity::class.java))
+            val taskIntent = Intent(context,TaskActivity::class.java)
+            with(items[position]){
+                taskIntent.putExtra("task_id",this.taskId)
+                taskIntent.putExtra("title",this.title)
+                taskIntent.putExtra("desc",this.description)
+                taskIntent.putExtra("status",this.status.name)
+            }
+            context.startActivity(taskIntent)
         }
     }
-
     override fun getItemCount() = items.size
 }

@@ -49,7 +49,8 @@
                     android:hint="@string/title_placeholder"
                     android:inputType="text"
                     android:lines="1"
-                    android:paddingHorizontal="10dp" />
+                    android:paddingHorizontal="10dp"
+                    tools:ignore="Autofill" />
             </LinearLayout>
 
             <LinearLayout
@@ -73,7 +74,8 @@
                     android:hint="@string/description_placeholder"
                     android:inputType="textMultiLine"
                     android:lines="5"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    tools:ignore="Autofill" />
             </LinearLayout>
 
             <CheckBox
@@ -81,7 +83,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="@string/set_date_and_time" />
+                android:text="@string/set_date_and_time"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:id="@+id/date_time_layout"

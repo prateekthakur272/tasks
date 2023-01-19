@@ -24,8 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-         taskDatabaseHelper = TaskDatabaseHelper(this)
-
+        taskDatabaseHelper = TaskDatabaseHelper(this)
         taskRecyclerView = findViewById(R.id.task_list_recycler_view)
         parentView = findViewById(R.id.linear_layout_main)
         adapter = TaskRecyclerViewAdapter(this,taskDatabaseHelper.getTasksArrayList())
@@ -36,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         addTaskButton.setOnClickListener {
             startActivity(Intent(this,AddTaskActivity::class.java))
         }
-
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu,menu)
@@ -50,8 +48,10 @@ class MainActivity : AppCompatActivity() {
                 val yesButton:Button = clearAllTasksDialog.findViewById(R.id.yes_button)
                 val noButton:Button = clearAllTasksDialog.findViewById(R.id.no_button)
                 yesButton.setOnClickListener {
+                    taskDatabaseHelper.markAllDone()
                     Snackbar.make(parentView,"Marked all as done",Snackbar.LENGTH_SHORT).show()
                     clearAllTasksDialog.dismiss()
+                    onRestart()
                 }
                 noButton.setOnClickListener {
                     clearAllTasksDialog.dismiss()
@@ -68,8 +68,7 @@ class MainActivity : AppCompatActivity() {
                     taskDatabaseHelper.deleteALLTasks()
                     Snackbar.make(parentView,"Deleted all tasks",Snackbar.LENGTH_SHORT).show()
                     deleteAllTasksDialog.dismiss()
-                    adapter.items = taskDatabaseHelper.getTasksArrayList()
-                    taskRecyclerView.adapter = adapter
+                    onRestart()
                 }
                 noButton.setOnClickListener {
                     deleteAllTasksDialog.dismiss()
@@ -79,6 +78,9 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.about -> {
                 startActivity(Intent(this,AboutActivity::class.java))
+            }
+            R.id.history -> {
+                startActivity(Intent(this,HistoryActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)
