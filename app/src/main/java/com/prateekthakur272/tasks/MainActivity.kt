@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         val addTaskButton:ImageButton = findViewById(R.id.add_task_button)
         addTaskButton.setOnClickListener {
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this,AddTaskActivity::class.java))
         }
 
     }

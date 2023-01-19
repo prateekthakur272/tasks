@@ -64,6 +64,8 @@ class AddTaskActivity : AppCompatActivity(){
         }
         addTaskButton.setOnClickListener {
             if (titleInputView.text.isNotBlank()){
+                val taskDatabaseHelper = TaskDatabaseHelper(this)
+                taskDatabaseHelper.addTask(Task("Title","Desc"))
                 taskAddedDialog.show()
             }else{
                 Toast.makeText(this,"Title field can not be empty!",Toast.LENGTH_LONG).show()
