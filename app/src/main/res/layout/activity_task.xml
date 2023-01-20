@@ -23,6 +23,7 @@
         android:padding="12dp"
         android:background="@drawable/edit_text_background"
         android:text = "@string/title"
+        android:textColor="?attr/colorOnSecondary"
         android:textStyle="bold"
         android:inputType="text"
         android:lines="1"
@@ -38,6 +39,7 @@
         android:background="@drawable/edit_text_background"
         android:text = "@string/description"
         android:textSize="18sp"
+        android:textColor="?attr/colorOnSecondary"
         android:inputType="textMultiLine"
         tools:ignore="Autofill,LabelFor"/>
 
@@ -45,6 +47,7 @@
         android:id="@+id/delete_task_button"
         android:layout_width="match_parent"
         android:layout_height="52dp"
+        android:textColor="@color/black"
         android:layout_marginTop="24dp"
         android:background="@drawable/button_secondary_background"
         android:text="@string/delete"/>
@@ -54,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_marginTop="24dp"
+        android:textColor="@color/black"
         android:background="@drawable/button_background"
         android:text="@string/mark_as_done"/>
 

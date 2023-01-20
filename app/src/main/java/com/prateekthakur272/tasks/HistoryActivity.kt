@@ -17,6 +17,7 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
         supportActionBar?.title = "History"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         taskDatabaseHelper = TaskDatabaseHelper(this)
         taskRecyclerView = findViewById(R.id.task_list_recycler_view)
@@ -31,14 +32,24 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        taskDatabaseHelper.deleteAllFinishedTask()
-        onRestart()
-        return true
+        when (item.itemId){
+            R.id.delete_history -> {
+                taskDatabaseHelper.deleteAllFinishedTask()
+                onRestart()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onRestart() {
         super.onRestart()
         adapter.items = taskDatabaseHelper.getFinishedTaskList()
         taskRecyclerView.adapter = adapter
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

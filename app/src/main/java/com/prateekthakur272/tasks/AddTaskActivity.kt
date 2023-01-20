@@ -1,19 +1,14 @@
 package com.prateekthakur272.tasks
 
-import android.app.DatePickerDialog
 import android.app.Dialog
-import android.app.TimePickerDialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
-import java.util.*
 
 class AddTaskActivity : AppCompatActivity(){
-    private val calendar: Calendar = Calendar.getInstance()
-    private lateinit var datePickerDialog:DatePickerDialog
-    private lateinit var timePickerDialog: TimePickerDialog
+    //private val calendar: Calendar = Calendar.getInstance()
+    //private lateinit var datePickerDialog:DatePickerDialog
+    //private lateinit var timePickerDialog: TimePickerDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_task)
@@ -65,7 +60,7 @@ class AddTaskActivity : AppCompatActivity(){
         addTaskButton.setOnClickListener {
             if (titleInputView.text.isNotBlank()){
                 val taskDatabaseHelper = TaskDatabaseHelper(this)
-                taskDatabaseHelper.addTask(Task(titleInputView.text.toString(),descriptionInput.text.toString()))
+                taskDatabaseHelper.addTask(Task(titleInputView.text.toString().trim(),descriptionInput.text.toString().trim()))
                 taskAddedDialog.show()
             }else{
                 Toast.makeText(this,"Title field can not be empty!",Toast.LENGTH_SHORT).show()

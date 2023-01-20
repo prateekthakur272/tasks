@@ -40,8 +40,6 @@ class TaskActivity : AppCompatActivity() {
             markAsDoneButton.visibility = View.GONE
             titleText.isEnabled = false
             descriptionText.isEnabled = false
-            titleText.setTextColor(getColor(R.color.white))
-            descriptionText.setTextColor(getColor(R.color.white))
         }
 
         markAsDoneButton.setOnClickListener {

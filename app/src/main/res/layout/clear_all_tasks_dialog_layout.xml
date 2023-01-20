@@ -34,7 +34,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="?attr/colorOnPrimary"
+            android:textColor="@color/black"
             android:background="@drawable/button_secondary_background"
             android:text="@string/no"/>
 
@@ -44,7 +44,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginStart="12dp"
-            android:textColor="?attr/colorOnPrimary"
+            android:textColor="@color/black"
             android:background="@drawable/button_background"
             android:text="@string/yes"/>
 

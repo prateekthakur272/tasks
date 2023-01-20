@@ -114,6 +114,6 @@
         android:layout_marginVertical="24dp"
         android:background="@drawable/button_background"
         android:text="@string/add_task"
-        android:textColor="?attr/colorOnPrimary" />
+        android:textColor="@color/black" />
 
 </LinearLayout>
