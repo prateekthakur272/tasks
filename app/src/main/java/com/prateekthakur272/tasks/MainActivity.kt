@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var taskDatabaseHelper:TaskDatabaseHelper
     private lateinit var adapter: TaskRecyclerViewAdapter
     private lateinit var taskRecyclerView:RecyclerView
-
+    private lateinit var allDoneMsg:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         taskDatabaseHelper = TaskDatabaseHelper(this)
         taskRecyclerView = findViewById(R.id.task_list_recycler_view)
         parentView = findViewById(R.id.linear_layout_main)
+        allDoneMsg = findViewById(R.id.all_done_msg)
         adapter = TaskRecyclerViewAdapter(this,taskDatabaseHelper.getTasksArrayList())
         taskRecyclerView.adapter = adapter
         taskRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -35,6 +37,10 @@ class MainActivity : AppCompatActivity() {
         addTaskButton.setOnClickListener {
             startActivity(Intent(this,AddTaskActivity::class.java))
         }
+        if (adapter.itemCount==0)
+            allDoneMsg.visibility = View.VISIBLE
+        else
+            allDoneMsg.visibility = View.GONE
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu,menu)
@@ -85,10 +91,13 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
     override fun onRestart() {
         super.onRestart()
         adapter.items = taskDatabaseHelper.getTasksArrayList()
         taskRecyclerView.adapter = adapter
+        if (adapter.itemCount==0)
+            allDoneMsg.visibility = View.VISIBLE
+        else
+            allDoneMsg.visibility = View.GONE
     }
 }
