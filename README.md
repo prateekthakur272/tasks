@@ -2,7 +2,7 @@
 # Tasks 🗒️
 
 Never forget your tasks, just use the tasks app and keep yourself reminding about next tasks.<br>
-This is an android application built with kotlin. This application have a good UX and interactive and easy to access UI
+This is an android application built with kotlin. This application have a good user experience and interactive and easy to access user interface
 
 check it out https://drive.google.com/file/d/1YaTpP9QY7crag3aiR-DG1PeWqqxJHk_9/view?usp=sharing
 
