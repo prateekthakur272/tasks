@@ -1,7 +1,6 @@
 package com.prateekthakur272.tasks
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,13 +15,8 @@ class AboutActivity : AppCompatActivity() {
         val githubButton:Button = findViewById(R.id.github_button)
 
         githubButton.setOnClickListener {
-            openUrl("https://prateekthakur272.github.io")
+            startActivity(Intent(this,ContactMeActivity::class.java))
         }
-    }
-    private fun openUrl(url:String):Unit{
-        val uriUrl: Uri = Uri.parse(url)
-        val launchBrowser = Intent(Intent.ACTION_VIEW, uriUrl)
-        startActivity(launchBrowser)
     }
     override fun onSupportNavigateUp(): Boolean {
         finish()
