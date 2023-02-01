@@ -36,7 +36,12 @@ class AddTaskActivity : AppCompatActivity(){
             taskAddedDialog.dismiss()
             finish()
         }
-        datePickerDialog = DatePickerDialog(this)
+        datePickerDialog = DatePickerDialog(this,{ _, year, month, day ->
+            "$year/$month/$day".also { binding.date.text = it }
+            println(Calendar.HOUR)
+            timePickerDialog.show()
+        },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH))
+
         timePickerDialog = TimePickerDialog(this,
             { _, hour, minute ->
                 "$hour:$minute".also{ binding.time.text = it}
@@ -50,11 +55,7 @@ class AddTaskActivity : AppCompatActivity(){
             else
                 binding.dateTimeLayout.visibility = View.GONE
         }
-        datePickerDialog.setOnDateSetListener { _, year, month, day ->
-            "$year/$month/$day".also { binding.date.text = it }
-            println(Calendar.HOUR)
-            timePickerDialog.show()
-        }
+        
         binding.date.setOnClickListener {
             datePickerDialog.show()
         }

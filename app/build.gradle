@@ -11,8 +11,8 @@ android {
         applicationId "com.prateekthakur272.tasks"
         minSdk 24
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 202301
+        versionName "2023-01"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
