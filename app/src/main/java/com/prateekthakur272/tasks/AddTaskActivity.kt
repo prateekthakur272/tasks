@@ -6,9 +6,12 @@ import android.app.TimePickerDialog
 import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import com.prateekthakur272.tasks.databinding.ActivityAddTaskBinding
+import kotlin.time.Duration.Companion.hours
+import kotlin.time.Duration.Companion.minutes
 
 class AddTaskActivity : AppCompatActivity(){
     private val calendar: Calendar = Calendar.getInstance()
@@ -18,7 +21,7 @@ class AddTaskActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddTaskBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_add_task)
+        setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Add task"
@@ -40,22 +43,22 @@ class AddTaskActivity : AppCompatActivity(){
             "$year/$month/$day".also { binding.date.text = it }
             println(Calendar.HOUR)
             timePickerDialog.show()
-        },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH))
+        },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH)+1,calendar.get(Calendar.DAY_OF_MONTH))
 
         timePickerDialog = TimePickerDialog(this,
             { _, hour, minute ->
-                "$hour:$minute".also{ binding.time.text = it}
+                "${hour.hours}:${minute.minutes} ".also{ binding.time.text = it}
             },calendar.get(Calendar.HOUR),calendar.get(Calendar.MINUTE),false)
 
         binding.addDateTime.setOnCheckedChangeListener { _, b ->
             if (b){
-                datePickerDialog.show()
                 binding.dateTimeLayout.visibility = View.VISIBLE
+                Log.i("checkbox","checked")
             }
             else
                 binding.dateTimeLayout.visibility = View.GONE
         }
-        
+
         binding.date.setOnClickListener {
             datePickerDialog.show()
         }
