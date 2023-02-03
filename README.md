@@ -4,7 +4,7 @@
 Never forget your tasks, just use the tasks app and keep yourself reminding about next tasks.<br>
 This is an android application built with kotlin. This application have a good user experience and interactive and easy to access user interface
 
-check it out👉🏻 https://drive.google.com/file/d/1YaTpP9QY7crag3aiR-DG1PeWqqxJHk_9/view?usp=sharing
+check it out https://drive.google.com/file/d/1YaTpP9QY7crag3aiR-DG1PeWqqxJHk_9/view?usp=sharing
 
 ## Preview ✌🏻
 ![Untitled design](https://user-images.githubusercontent.com/67188426/213861547-d7d49f5f-bea3-4920-849d-58aef411d419.jpg)
