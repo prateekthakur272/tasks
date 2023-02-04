@@ -14,9 +14,6 @@ import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
 
 class AddTaskActivity : AppCompatActivity(){
-    private val calendar: Calendar = Calendar.getInstance()
-    private lateinit var datePickerDialog: DatePickerDialog
-    private lateinit var timePickerDialog: TimePickerDialog
     private lateinit var binding: ActivityAddTaskBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,32 +35,6 @@ class AddTaskActivity : AppCompatActivity(){
         doneButton.setOnClickListener {
             taskAddedDialog.dismiss()
             finish()
-        }
-        datePickerDialog = DatePickerDialog(this,{ _, year, month, day ->
-            "$year/$month/$day".also { binding.date.text = it }
-            println(Calendar.HOUR)
-            timePickerDialog.show()
-        },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH)+1,calendar.get(Calendar.DAY_OF_MONTH))
-
-        timePickerDialog = TimePickerDialog(this,
-            { _, hour, minute ->
-                "${hour.hours}:${minute.minutes} ".also{ binding.time.text = it}
-            },calendar.get(Calendar.HOUR),calendar.get(Calendar.MINUTE),false)
-
-        binding.addDateTime.setOnCheckedChangeListener { _, b ->
-            if (b){
-                binding.dateTimeLayout.visibility = View.VISIBLE
-                Log.i("checkbox","checked")
-            }
-            else
-                binding.dateTimeLayout.visibility = View.GONE
-        }
-
-        binding.date.setOnClickListener {
-            datePickerDialog.show()
-        }
-        binding.time.setOnClickListener {
-            timePickerDialog.show()
         }
         addTaskButton.setOnClickListener {
             if (titleInputView.text.isNotBlank()){

@@ -67,45 +67,6 @@
             tools:ignore="Autofill" />
     </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/add_date_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="false"
-        android:text="@string/set_date_and_time" />
-
-    <LinearLayout
-        android:id="@+id/date_time_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal"
-        android:visibility="gone"
-        android:layout_gravity="center">
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/date_placeholder"
-            android:textSize="14sp"
-            app:drawableStartCompat="@drawable/ic_calendar"
-            android:drawablePadding="5dp"/>
-
-        <TextView
-            android:id="@+id/time"
-            android:layout_marginStart="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/time_placeholder"
-            android:textSize="14sp"
-            app:drawableStartCompat="@drawable/ic_clock"
-            android:drawablePadding="5dp"/>
-
-    </LinearLayout>
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add_task_button"
         android:layout_width="match_parent"
