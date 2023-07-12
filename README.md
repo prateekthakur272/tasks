@@ -7,9 +7,8 @@ This is an android application built with kotlin. This application have a good u
 check it out👉🏻 https://drive.google.com/file/d/1YaTpP9QY7crag3aiR-DG1PeWqqxJHk_9/view?usp=sharing
 
 ## Preview ✌🏻
-![Untitled design](https://user-images.githubusercontent.com/67188426/213861547-d7d49f5f-bea3-4920-849d-58aef411d419.jpg)
 
-
+![tasks](https://github.com/prateekthakur272/tasks/assets/67188426/c15b0f2a-7cdc-4584-a4a9-5ed8ebcb7d28)
 
 ## Color Reference 🎨
 
